@@ -5,4 +5,4 @@ n, x = map(int, input().split())
 array = list(map(int, input().split()))
 for data in array:
   if (data < x):
-    print(data, end = ' ')
+    print(data, sep='')
