@@ -13,3 +13,10 @@ for _ in range(caseNum):
       count += 1
   result = count / arr[0] * 100
   print(f'{result:.3f}%')
+
+  # 중간에 평균 넘는 사람 구하는 부분을 이렇게 작성했는데 
+  # 백준에서는 틀렸다고 나오더라... 
+  # 아마 아래의 for문을 쓰면 안되는거 같음 
+  # aboveAvg = [data for data in arr if data > average]
+  # result = round(len(aboveAvg)/arr[0]*100,3)
+  # print(f'{result:.3f}%')
