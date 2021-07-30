@@ -1,3 +1,6 @@
+# 백준 단계별 풀이 4단계
+# https://www.acmicpc.net/problem/1110
+
 n = int(input())
 goal = n
 ten = n // 10
