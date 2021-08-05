@@ -17,6 +17,7 @@ for char in input_s:
 
 print(result)
 
+# index 0번부터 시작한다면 +3초 
 # dial_s = ["ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"]
 
 # input_s = input()
