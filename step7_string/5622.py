@@ -16,3 +16,14 @@ for char in input_s:
       result += (i + 2)
 
 print(result)
+
+# dial_s = ["ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"]
+
+# input_s = input()
+# result = 0
+# for char in input_s:
+#   for i in range(len(dial_s)):
+#     if dial_s[i].find(char) != -1:
+#       result += (i + 3)
+
+# print(result)
