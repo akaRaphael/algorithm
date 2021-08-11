@@ -1,3 +1,5 @@
+# 백준 단계별 풀이 8단계
+# https://www.acmicpc.net/problem/2292
 n = int(input()) 
 prev = 1
 count = 1
