@@ -71,6 +71,3 @@ elif (n // 5 >= 1) and (n % 5 == 4):
   print(bag_five + bag_three)
 else:
   print(-1)
-
-
-
