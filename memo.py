@@ -1,3 +1,41 @@
+# 11653 - 내가 적은 코드는 2초, 이 코드는 90ms 걸림 
+# 0.5를 곱하는건 어디서 온 걸까? 신기하다. 찾아보자.
+import sys
+
+N = int(sys.stdin.readline().rstrip())
+for i in range(2, int(N ** 0.5) + 1):
+    while N % i == 0:
+        print(i)
+        N //= i
+if N > 1:
+    print(N)
+
+# 2581 - 나는 1000ms 걸렸는데 이 코드는 76ms 걸림 
+# 메소드를 정의해서 이용하면 훨씬 빠르다! 라는 것을 알게 되었다! 
+def point(n) :
+    solve = [True] * (n + 1)
+    solve[1] = False
+    m = n**0.5
+    for i in range(2, int(m) +1) :
+        if solve[i] == True :
+            for j in range( i*i, n + 1, i) :
+                solve[j] = False
+    return solve
+
+N = int(input())
+M = int(input())
+
+solve = point(M)
+ans = []
+for i in range(N, M+1) :
+    if solve[i] == True:
+        ans.append(i)
+
+if len(ans) > 0 :
+    print(sum(ans), ans[0])
+else :
+    print(-1)
+
 # 2839번 - 짧은 코드 
 N = int(input())
 
