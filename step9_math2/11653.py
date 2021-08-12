@@ -16,4 +16,3 @@ while n > 1:
 
 for i in range(len(case)):
   print(case[i])
-
