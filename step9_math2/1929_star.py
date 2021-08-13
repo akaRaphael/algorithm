@@ -16,9 +16,6 @@
 #     print(i)
 
 # 에라토스테네스의 체를 이용한 방식
-import sys
-input = sys.stdin.readline
-
 
 #n 이하의 체를 구하는 함수
 def prime(n):
