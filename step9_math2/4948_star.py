@@ -1,4 +1,4 @@
-# 백준 단계별 풀이 9단계
+# 백준 단계별 풀이 9단계 - 베르트랑 공준
 # https://www.acmicpc.net/problem/4948
 
 def check_sosu(n):

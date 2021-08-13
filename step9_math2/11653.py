@@ -1,4 +1,4 @@
-# 백준 단계별 풀이 9단계
+# 백준 단계별 풀이 9단계 - 소인수분해
 # https://www.acmicpc.net/problem/11653
 
 n = int(input())

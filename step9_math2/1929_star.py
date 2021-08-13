@@ -1,4 +1,4 @@
-# 백준 단계별 풀이 9단계
+# 백준 단계별 풀이 9단계 - 소수 구하기
 # https://www.acmicpc.net/problem/1929
 
 # def check_yaksoo(n):
