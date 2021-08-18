@@ -1,10 +1,2 @@
-t = int(input())
-for _ in range(t):
-  univ = []
-  alcho = []
-  t2 = int(input())
-  for _ in range(t2):
-    a, b = input().split()
-    univ.append(a)
-    alcho.append(int(b))
-  print(univ[alcho.index(max(alcho))])
+#파이썬 16진수 출력방법
+#print(int(input(), 16))
