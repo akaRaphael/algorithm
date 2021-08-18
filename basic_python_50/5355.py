@@ -1,6 +1,5 @@
 # 파이썬 50제 (1 ~ 50) - 화성수학
 # https://www.acmicpc.net/problem/5355
-
 from sys import stdin
 
 t = int(input())

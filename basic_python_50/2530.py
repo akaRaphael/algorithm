@@ -1,6 +1,5 @@
 # 파이썬 50제 (1 ~ 50) - 인공지능시계
 # https://www.acmicpc.net/problem/2530
-
 h, m, s = map(int, input().split())
 d = int(input())
 
