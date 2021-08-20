@@ -11,6 +11,7 @@
 # 3) bubble sort의 시간복잡도(time complexity)
 #   - bubble sort는 n개의 요소를 n번 탐색한다.
 #   - 그러므로 O(n^2)의 시간복잡도를 갖는다. 
+#   - 이와 같은 이유로 버블정렬은 잘 사용하지 않는다.
 
 # 4) bubble sort 구현    
 from typing import List
