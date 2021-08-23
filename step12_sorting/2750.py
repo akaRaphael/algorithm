@@ -6,6 +6,7 @@ from typing import List
 from sys import stdin
 
 input = stdin.readline
+
 def bubble_sort (case: List[int]) -> List[int]:
   for idx in range(len(case) - 1):
     for j in range(len(case) - idx - 1):
@@ -21,3 +22,15 @@ for _ in range(t):
 
 for data in bubble_sort(case):
   print(data)
+
+# 파이썬 정렬 라이브러리를 사용하면 
+t = int(input())
+result = [] 
+for _ in range(t):
+  result.append(int(input()))
+
+result.sort()
+for data in result:
+  print(data)
+
+from typing import list
