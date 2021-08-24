@@ -42,7 +42,7 @@ def selection_sort2(case: List[int]) -> List[int]:
       if case[i] < min_num:
         min_num = case[i]
         min_idx = i
-    case[idx], case[min_idx] = case[min_idx], case[idx] #swap
+    case[idx], case[min_idx] = case[min_idx], case[idx] #swap 
   return case
 
 print(selection_sort2(case = [5, 4, 3, 2, 1]))
