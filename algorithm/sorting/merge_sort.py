@@ -64,7 +64,6 @@ def merge_sort(case: List[int]) -> List[int]:
     if sorted_right[right_idx] <= sorted_left[left_idx]:
       sorted_case.append(sorted_right[right_idx])
       right_idx += 1
-      continue
 
     # 만약 left_idx가 가리키는 요소가 right_idx가 가리키는 요소보다 작은 경우
     # left_idx가 가리키는 요소를 결과 배열에 병합한다. 
