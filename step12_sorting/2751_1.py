@@ -19,8 +19,8 @@ def merge_sort(case: List[int]) -> List[int]:
   result = []
   left_idx = 0
   right_idx = 0
-  sorted_left = merge_sort(left_case)
-  sorted_right = merge_sort(right_case)
+  sorted_left = merge_sort(case = left_case)
+  sorted_right = merge_sort(case = right_case)
 
   while left_idx < len(sorted_left) or right_idx < len(sorted_right):
     if left_idx == len(sorted_left):
