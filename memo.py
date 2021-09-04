@@ -8,6 +8,7 @@ def bubble_sort(case: List[int]) -> List[int]:
                 case[i], case[i + 1] = case[i + 1], case[i]
     return case
 
+# ==================================================================
 # 삽입정렬
 def insertion_sort(case: List[int]) -> List[int]:
     for idx in range(1, len(case)):
@@ -19,6 +20,7 @@ def insertion_sort(case: List[int]) -> List[int]:
         case[flag + 1] = current
     return case
 
+# ==================================================================
 # 선택정렬
 def selection_sort(case: List[int]) -> List[int]:
     for idx in range(len(case)):
@@ -31,6 +33,7 @@ def selection_sort(case: List[int]) -> List[int]:
         case[min_idx] , case[idx] = case[idx], case[min_idx]
     return case
 
+# ==================================================================
 # 병합정렬
 def merge_sort(case: List[int]) -> List[int]:
     length = len(case)
@@ -71,9 +74,44 @@ def merge_sort(case: List[int]) -> List[int]:
             left_idx += 1
     
     return sorted_case
+# ==================================================================
+import random
 
+def quick_select(case: List[int], k: int) -> int:
+    length = len(case)
+    if length == 1:
+        return case[0]
 
-print(bubble_sort(case = [6, 4, 1, 3, 2, 1, 7]))
-print(insertion_sort(case = [6, 4, 1, 3, 2, 1, 7]))
-print(selection_sort(case = [6, 4, 1, 3, 2, 1, 7]))
-print(merge_sort(case = [8, 7, 6, 5, 4, 3, 2, 1]))
+    pivot_idx = random.randrange(length)
+    last_idx = length - 1
+
+    case[pivot_idx], case[last_idx] = case[last_idx], case[pivot_idx]
+    pivot = case[-1]
+    left_idx = 0
+    right_idx = length - 2
+
+    while left_idx <= right_idx: 
+        if case[left_idx] <= pivot:
+            left_idx += 1
+            continue
+
+        if case[right_idx] > pivot:
+            right_idx -= 1
+            continue
+
+        if pivot < case[left_idx] and pivot >= case[right_idx]:
+            case[left_idx], case[right_idx] = case[right_idx], case[left_idx]
+            continue
+
+    case[left_idx], case[last_idx] = case[last_idx], case[left_idx]
+
+    if left_idx == length - k:
+        return case[left_idx]
+
+    elif left_idx < length - k:
+        return quick_select(case = case[left_idx + 1:], k = k)
+    
+    elif left_idx > length - k:
+        return quick_select(case = case[:left_idx], k = k - (length - left_idx))
+    
+print(quick_select(case = [4, 3, 5, 1, 6, 7], k = 2))
