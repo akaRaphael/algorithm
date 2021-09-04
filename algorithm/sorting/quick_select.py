@@ -47,7 +47,7 @@ def quick_select(case: List[int], k: int) -> int:
   
   # quick select를 한바퀴 돌으면, left_idx가 pivot의 우측에 정렬되는 수 중에 가장 왼쪽의 수를 가리킨다. 
   case[left_idx], case[last_idx] = case[last_idx], case[left_idx]
-  if left_idx == length - k: # 좌측 포인터가 가리키 index가 찾고 있는 index인 경우 
+  if left_idx == length - k: # 좌측 포인터가 가리키는 index가 찾고 있는 index인 경우 
     return case[left_idx]
 
   elif left_idx < length - k: # pivot의 우측에 있는 수 중에 찾고 있는 수가 있는 경우
