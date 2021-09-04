@@ -75,6 +75,8 @@ def merge_sort(case: List[int]) -> List[int]:
     
     return sorted_case
 # ==================================================================
+# quick select
+
 import random
 
 def quick_select(case: List[int], k: int) -> int:
