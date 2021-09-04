@@ -58,4 +58,4 @@ def quick_select(case: List[int], k: int) -> int:
     return quick_select(case = case[:left_idx], k = k - (length - left_idx)) # 좌측의 요소를 대상으로 quick select를 다시 적용
     # k - (length - left_idx)를 하는 이유는, 좌측의 수 만을 대상으로 배열을 형성하는 경우, 요소 개수의 변화로 타겟 index가 달라지기 때문이다. 
 
-print(quick_select(case = [5, 7, 9, 3, 2, 1, 4], k = 2))
+print(quick_select(case = [4,2,1,3,5], k = 2))
