@@ -41,8 +41,11 @@ def quick_sort(case:List[int], begin_idx:int, last_idx:int) -> List[int]:
       continue
   case[left_idx], case[last_idx] = case[last_idx], case[left_idx]
 
-  quick_sort(case = case, begin_idx = left_idx + 1, last_idx = last_idx) #pivot의 우측 파티션을 대상으로 quick sort 적용
-  quick_sort(case = case, begin_idx = begin_idx, last_idx = left_idx - 1) # pivot의 좌측 파티션을 대상으로 quick sort 적용
+  # pivot의 우측 파티션을 대상으로 quick sort 적용
+  quick_sort(case = case, begin_idx = left_idx + 1, last_idx = last_idx) 
+
+  # pivot의 좌측 파티션을 대상으로 quick sort 적용
+  quick_sort(case = case, begin_idx = begin_idx, last_idx = left_idx - 1) 
 
   return case
 
