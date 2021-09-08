@@ -8,12 +8,14 @@
 #      - min Heap은 루트노드에 항상 최소값의 요소가 위치한다. 
 #   - 파이썬은 heapq 라이브러리를 통해 heap을 구현할 수 있는데, min Heap만을 지원한다. 
 
-# 2) Heap Sort 구현
+# 3) heapify가 동작하는 방식
+
+# 3) Heap Sort 구현
 
 from typing import List
 import heapq
 
-# 최대 힙을 오름차순으로 정렬하라. 
+# 최대 힙을 이용해 오름차순으로 정렬하라. 
 def heap_sort(case:List[int]) -> List[int]:
   # min Heap을 max Heap으로 만드는 과정 
 
