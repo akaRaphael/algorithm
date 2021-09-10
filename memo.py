@@ -147,3 +147,20 @@ case = [5, 7, 9, 3, 1, 5, 5, 2, 4]
 quick_sort(case = case, begin_idx = 0, last_idx = len(case) - 1)
 print(case)
 
+
+# Heap Sort
+import heapq
+
+def heap_sort(case:List[int]) -> List[int]:
+  case = [-1 * data for data in case]
+  heapq.heapify(case)
+
+  sorted_case = [0] * len(case)
+
+  for i in range(len(case) - 1, -1, -1):
+    largest = -1 * heapq.heappop(case)
+    sorted_case[i] = largest
+
+  return sorted_case
+
+print(heap_sort(case = [5, 7, 9, 3, 1, 5, 5, 2, 4]))
