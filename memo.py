@@ -137,12 +137,25 @@ def quick_sort(case:List[int], begin_idx:int, last_idx:int) -> List[int]:
   return case
 
 
-print(bubble_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
-print(insertion_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
-print(selection_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
-print(merge_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
-print(quick_select(case = [9,88,7,6,5,4,5,3,2,1], k = 2)) # k번째 큰수 찾기 인데, 작은 수 찾기는 어떻게 할까? 
+import heapq
+def heap_sort(case: List[int]) -> List[int]:
+  case = [-1 * n for n in case]
+  heapq.heapify(case)
 
-case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]
+  sorted_case = [0] * len(case)
+
+  for i in range(len(case) - 1, -1, -1):
+    sorted_case[i] =  -1 * heapq.heappop(case)
+  
+  return sorted_case
+
+print("bubble_sort =", bubble_sort(case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2]))
+print("insertion_sort =", insertion_sort(case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2]))
+print("selection_sort =", selection_sort(case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2]))
+print("merge_sort =", merge_sort(case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2]))
+print("quick_select =", quick_select(case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2], k = 2)) # k번째 큰수 찾기 인데, 작은 수 찾기는 어떻게 할까? 
+
+case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2]
 quick_sort(case = case, begin_idx = 0, last_idx = len(case) - 1)
-print(case)
+print("quick_sort =", case)
+print("heap_sort =", heap_sort(case = [9,10,11,13,14,15,16,1,5,6,7,8,3,2]))
