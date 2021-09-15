@@ -107,7 +107,35 @@ def quick_select(case: List[int], k:int) -> int:
     return quick_select(case = case[:left_idx], k = k - (length - left_idx))
 
 
-def quick_sort(case:List[int])
+def quick_sort(case:List[int], begin_idx:int, last_idx:int) -> List[int]:
+  length = last_idx - begin_idx + 1
+  if length <= 1:
+    return case
+  
+  pivot_idx = random.randrange(begin_idx, last_idx + 1)
+  case[pivot_idx], case[last_idx] = case[last_idx], case[pivot_idx]
+  left_idx = 0
+  right_idx = last_idx - 1
+  pivot = case[last_idx]
+
+  while left_idx <= right_idx:
+    if case[left_idx] <= pivot:
+      left_idx += 1
+      continue
+
+    if case[right_idx] > pivot:
+      right_idx -= 1
+      continue
+
+    if pivot < case[left_idx] and pivot >= case[right_idx]:
+      case[left_idx], case[right_idx] = case[right_idx], case[left_idx]
+      continue
+  case[left_idx], case[last_idx] = case[last_idx], case[left_idx]
+  quick_sort(case = case, begin_idx = left_idx + 1, last_idx = last_idx)
+  quick_sort(case = case, begin_idx = begin_idx, last_idx = left_idx - 1)
+
+  return case
+
 
 print(bubble_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
 print(insertion_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
@@ -115,6 +143,6 @@ print(selection_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
 print(merge_sort(case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]))
 print(quick_select(case = [9,88,7,6,5,4,5,3,2,1], k = 2)) # k번째 큰수 찾기 인데, 작은 수 찾기는 어떻게 할까? 
 
-
-
-
+case = [9,88,7,6,5,4,4,5,3,3,2,2,3,1,1,1]
+quick_sort(case = case, begin_idx = 0, last_idx = len(case) - 1)
+print(case)
