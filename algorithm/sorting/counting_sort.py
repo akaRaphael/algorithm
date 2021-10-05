@@ -9,7 +9,7 @@ def countingSort(nums:List[int])->List[int]:
   count_array = [0] * range # count array 생성 
 
   for num in nums: # count array의 요소를 채우는 과정 
-    count_idx = num - min_num
+    count_idx = num - min_num # min_num이 0이 아닌 경우, index 0번이 비어있게 되기 때문에 이를 방지하기 위함.
     count_array[count_idx] += 1
 
   acc_counts = [] # acc(누적) array 생성 
