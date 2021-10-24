@@ -3,9 +3,8 @@ from typing import List
 
 class Solution:
   def shuffle(self, nums:List[int], n: int) -> List[int]:
-    mid = n
-    left = nums[:mid]
-    right = nums[mid:]  
+    left = nums[:n]
+    right = nums[n:]  
     result = []
 
     for i in range(len(left)):
