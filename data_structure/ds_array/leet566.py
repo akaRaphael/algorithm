@@ -1,29 +1,23 @@
 # 566. Reshape the Matrix
 
 from typing import List
+class Solution:
+  def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+    originalR = len(mat)
+    originalC = len(mat[0])
+    if originalR == r or originalC == c:
+        return mat
+    elif originalR * originalC != r * c:
+        return mat
 
-# def matrixReshape(mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+    # Valid at this point
+    result = []
+    for i in range(r * c):
+        if not (i % c):
+            result.append([])
+        newItem = mat[i // originalC][i % originalC]
+        result[-1].append(newItem)
+    return result
 
-mat = [[1,2],[3,4]]
-group = []
-result = []
-r = 2
-c = 2
-
-for i in range(len(mat)):
-  for j in range(len(mat[i])):
-    if r == 1:
-        group.append(mat[i][j])
-    
-    elif len(group) // r == 0:
-      group.append(mat[i][j])
-
-    else:
-      result.append(group)
-      group = []
-        
-    if len(group) == c:
-        result.append(group)
-        group = []
-    
-print(result)
+foo = Solution()
+print(foo.matrixReshape(mat = [[1,2,3,4]], r = 2, c = 2))
