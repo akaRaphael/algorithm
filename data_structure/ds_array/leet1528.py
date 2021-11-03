@@ -3,11 +3,9 @@ from typing import List
 
 class Solution:
   def restoreString(self, s: str, indices: List[int]) -> str:
-
     temp = [0] * len(indices)
     for i in range(len(indices)):
       temp[indices[i]] = s[i]
-    
     return "".join(temp)
     
 
