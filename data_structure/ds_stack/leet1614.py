@@ -12,4 +12,7 @@ def maxDepth(s: str) -> int:
   return max_depth
 
 print(maxDepth(s = "(1+(2*3)+((8)/4))+1"))
+print(maxDepth(s = "1"))
+print(maxDepth(s = "()"))
+print(maxDepth(s = ""))
     
