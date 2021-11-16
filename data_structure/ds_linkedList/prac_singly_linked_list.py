@@ -28,7 +28,7 @@ class SinglyLinkedList():
       print("No exsting nodes")
       return
     
-    elif self.head == data:
+    elif self.head.data == data:
       temp = self.head
       self.head = self.head.next
       del temp
@@ -43,3 +43,11 @@ class SinglyLinkedList():
         else:
           node = node.next
           
+singly_list = SinglyLinkedList(0)
+singly_list.add(1)
+singly_list.add(2)
+singly_list.add(3)
+singly_list.add(4)
+singly_list.add(5)
+singly_list.delete(3)
+singly_list.printAll()
