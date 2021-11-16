@@ -3,7 +3,7 @@
 class Node(object):
   def __init__(self, data, next = None):
     self.data = data
-    self.next = None
+    self.next = next
     
 class SinglyLinkedList(object):
   def __init__(self, data):
@@ -24,7 +24,7 @@ class SinglyLinkedList(object):
       print(node.data)
       node = node.next
       
-  def delete(self, data):
+  def delete(self, data): # 여기서부터 다시 공부할 것 
     if self.head == None:
       print("can't find node")
       return
