@@ -9,8 +9,7 @@ class SinglyLinkedList():
     
   def add(self, data):
     if self.head == None:
-      self.head = data
-      
+      self.head = Node(data)
     else:
       node = self.head
       while node.next:
@@ -22,12 +21,13 @@ class SinglyLinkedList():
     while node:
       print(node.data)
       node = node.next
+    print("\n")
       
-  def delete(self,data):
+  def delete(self, data):
     if self.head == None:
-      print("No exsting nodes")
+      print("nothing to delete")
       return
-    
+      
     elif self.head.data == data:
       temp = self.head
       self.head = self.head.next
@@ -43,11 +43,18 @@ class SinglyLinkedList():
         else:
           node = node.next
           
-singly_list = SinglyLinkedList(0)
-singly_list.add(1)
-singly_list.add(2)
-singly_list.add(3)
-singly_list.add(4)
-singly_list.add(5)
-singly_list.delete(3)
-singly_list.printAll()
+single = SinglyLinkedList(0)
+single.printAll()
+
+single.add(1)
+single.add(2)
+single.add(3)
+single.add(4)
+single.printAll()
+
+single.delete(0)
+single.printAll()
+single.delete(3)
+single.printAll()
+single.delete(4)
+single.printAll()
