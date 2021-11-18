@@ -39,11 +39,15 @@ class DoublyLinkedList():
       self.tail = new_node
       
   def printAll(self):
-    node = self.head
-    while node:
-      print(node.data)
-      node = node.next
-  
+    if self.head:
+      node = self.head
+      while node:
+        print(node.data)
+        node = node.next
+      print("\n")
+    else:
+      print("Nothing to print out.")
+    
   def insertAt(self, data, idx):
     prevn = None
     nextn = None
@@ -109,6 +113,44 @@ class DoublyLinkedList():
           print(f"뒤에서 {count}번째 노드입니다 => {node.data}")
           return
           
+  def delete(self):
+    try:
+      if self.head:
+        node = self.tail
+        self.tail = node.prev
+        self.tail.next = None
+        del node
+        
+      else:
+        print("Nothing to delete")
+        
+    except:
+      self.head = None
+      print("Nothing to delete")
+      return
+    
+  def deleteAt(self, idx):
+    if self.head:
+      if idx == 0:
+        node = self.head
+        self.head = node.next
+        node.next.prev = None
+        self.head.next = node.next.next
+        del node
+        return
+      else:
+        node = self.head
+        count = 0
+        while node.next:
+          node = node.next
+          count += 1
+          if count == idx:
+            temp = node
+            node.prev.next = node.next
+            node.next.prev = node.prev
+            del temp
+            return
+                    
 
 doubly = DoublyLinkedList(0)
 doubly.add(1)        
@@ -121,3 +163,14 @@ print(f"length = {doubly.getLength()}")
 doubly.searchFromHead(10)
 doubly.printAll()
 doubly.searchFromTail(0)
+doubly.printAll()
+doubly.deleteAt(0)
+doubly.printAll()
+doubly.delete()
+doubly.printAll()
+doubly.deleteAt(1)
+doubly.printAll()
+doubly.delete()
+doubly.delete()
+doubly.delete()
+doubly.printAll()
