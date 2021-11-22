@@ -94,7 +94,7 @@ class CircularLinkedList():
         count = 1
         while curn.next != self.head:
           curn = curn.next 
-          count += 1
+          
         new_node.next = self.head
         self.head = new_node
         curn.next = self.head
