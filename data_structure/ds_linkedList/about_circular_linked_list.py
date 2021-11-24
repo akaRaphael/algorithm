@@ -109,6 +109,7 @@ class CircularLinkedList():
             new_node.next = curn
             return
           else:
+            prevn = curn
             curn = curn.next
             count += 1
     else:
@@ -128,6 +129,7 @@ class CircularLinkedList():
           break
         curn = curn.next
       print(result)
+      print(f"head = {self.head.data}")
     else:
       print("Nothing to print out.")
 
