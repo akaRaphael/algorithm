@@ -118,3 +118,31 @@ class BST():
       self.change_node.right = self.curn.right
       
     return True
+
+import random
+
+bst_nums = set()
+while len(bst_nums) < 100:
+  bst_nums.add(random.randint(0, 999))
+  
+bst = BST(0)
+
+for num in bst_nums:
+  bst.insert(num)
+  
+for num in bst_nums:
+  if bst.search(num) == False:
+    print(f"{nums} is not in BST")
+
+delete_nums = set()
+bst_nums = list(bst_nums)
+
+while len(delete_nums) < 10:
+  delete_nums.add(bst_nums[random.randint(0, 99)])
+  
+for del_num in delete_nums:
+  if bst.delete(del_num) == False:
+    print(f"{del_num}, delete failed")
+  else:
+    print(f"{del_num} was deleted")
+    
