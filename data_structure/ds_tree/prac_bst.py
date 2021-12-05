@@ -145,4 +145,5 @@ for del_num in delete_nums:
     print(f"{del_num}, delete failed")
   else:
     print(f"{del_num} was deleted")
-    
+
+bst.delete(99999)
