@@ -36,3 +36,38 @@
 #  - Chaning 기법을 보완한 형태 
 #  - hash 충돌이 발생하면, Hash Table의 다른 빈공간을 찾아 저장하는 방법 
 #  - Hash Table의 공간활용성을 높인다. 
+
+# 8) 기본적인 Hash Table 구현 
+# a. 간단한 hash function 정의 (나머지를 이용한 hash값 생성)
+def hash_func(key):
+  return key % 3
+
+# b. 각 key의 앞글자를 이용해 hash key를 생성한다.
+# ord() => 문자를 아스키코드로 변환
+key1 = "Raphael"
+key2 = "Teddy"
+key3 = "Mike"
+key1 = ord(key1[0])
+key2 = ord(key2[0]) 
+key3 = ord(key3[0]) 
+print(hash_func(key1), hash_func(key2), hash_func(key3))
+
+# c. Hash Table에 저장 및 검색 
+hash_table = [0 for i in range(10)]
+
+def store_data(key, value):
+  key = ord(key[0])
+  hash_address = hash_func(key)
+  hash_table[hash_address] = value
+
+def get_data(key):
+  key = ord(key[0])
+  hash_address = hash_func(key)
+  print(hash_table[hash_address])
+
+store_data("Raphael", 123)
+store_data("Teddy", 456)
+store_data("Mike", 789)
+get_data("Raphael")
+get_data("Teddy")
+get_data("Mike")
