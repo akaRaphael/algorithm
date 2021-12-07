@@ -38,9 +38,10 @@
 #  - Hash Table의 공간활용성을 높인다. 
 
 # 8) 기본적인 Hash Table 구현 
+
 # a. 간단한 hash function 정의 (나머지를 이용한 hash값 생성)
 def hash_func(key):
-  return key % 3
+  return key % 3 # hash key의 범위는 0 ~ 2
 
 # b. 각 key의 앞글자를 이용해 hash key를 생성한다.
 # ord() => 문자를 아스키코드로 변환
@@ -53,7 +54,7 @@ key3 = ord(key3[0])
 print(hash_func(key1), hash_func(key2), hash_func(key3))
 
 # c. Hash Table에 저장 및 검색 
-hash_table = [0 for i in range(10)]
+hash_table = [0 for i in range(5)]
 
 def store_data(key, value):
   key = ord(key[0])
