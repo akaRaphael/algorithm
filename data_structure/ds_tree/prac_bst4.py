@@ -75,41 +75,29 @@ class BST():
         self.parent.right = self.curn.right
         
     elif self.curn.left != None and self.curn.right != None:
+      self.change_node = self.curn.right
+      self.change_parent = self.curn.right
+      
+      while self.change_node.left != None:
+        self.change_parent = self.change_node
+        self.change_node = self.change_node.left
+        
+      if self.change_node.right != None:
+        self.change_parent.left = self.change_node.right
+      else:
+        self.change_parent.left = None
+        
       if data < self.parent.data:
-        self.change_node = self.curn.right
-        self.chang_parent = self.curn.right
-        
-        while self.change_node.left != None:
-          self.change_parent = self.change_node
-          self.change_node = self.change_node.left
-          
-        if self.change_node.right != None:
-          self.change_parent.left = self.change_node.right
-        else:
-          self.change_parent.left = None
-        
         self.parent.left = self.change_node
         self.change_node.left = self.curn.left
         self.change_node.right = self.curn.right
-        
       else:
-        self.change_node = self.curn.right
-        self.chang_parent = self.curn.right
-        
-        while self.change_node.left != None:
-          self.change_parent = self.change_node
-          self.change_node = self.change_node.left
-          
-        if self.change_node.right != None:
-          self.change_parent.left = self.change_node.right
-        else:
-          self.change_parent.left = None
-          
         self.parent.right = self.change_node
         self.change_node.left = self.curn.left
         self.change_node.right = self.curn.right    
-        
+      
     print(f"{data} successfully deleted")
+    return True
     
     
 import random
