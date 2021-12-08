@@ -12,7 +12,7 @@
 
 # 3) Queue 시간복잡도 
 # - enqueue =>  O(1)
-# - dequeue => O(N)
+# - dequeue => O(1)
 
 # 4) Queue의 활용 
 #  - CPU 스케쥴링, Disk 스케쥴링
