@@ -47,34 +47,28 @@ queue.print_queue()
 queue.queue_length()
 
 # 5) collections.deque를 이용한 Queue
-# - deque(데크)는 double-ended queue로 앞/뒤 방향에서 데이터를 처리할 수 있는 양방향 Queue를 의미한다.
-# - appendleft()를 사용하면 맨 앞에 데이터를 추가할 수 있다. 
-# - popleft()를 사용하면 맨 앞의 데이터를 추출할 수 있다. 
+# - deque(데크, double-ended queue)는 앞/뒤 방향에서 데이터를 입출력할 수 있는 양방향 Queue
+# - appendleft()를 사용하면 왼쪽부터 데이터를 추가한다. 
+# - popleft()를 사용하면 왼쪽부터 데이터를 추출한다. 
 # - 내부적으로 doubly linked list로 구현되어 있기 때문에 빠른 처리가 가능하다. 
 # - enqueue / dequeue 의 시간복잡도 O(1)
-# * deque를 사용하는 이유 - 자료구조의 시작과 끝부분에서 삽입/삭제가 빈번한 경우, 리스트보다 효율적이다! 
+# - deque는 양방향 입출력이 가능하므로 List Queue보다 빠르다. 
 
 from collections import deque
-
 dq = deque()
-dq.append(1)
-dq.append(2)
-dq.append(3)
+dq.appendleft(0)
+dq.appendleft(1)
+dq.appendleft(2)
+print(dq)
+dq.pop()
+print(dq)
 
-# print(dq)
-# dq.appendleft(4)
-# print(dq)
-# print(dq.pop())
-# print(dq)
-# print(dq.popleft())
-# print(dq)
-
-# 6) 파이썬 queue 모듈로 구현하기 
-# - 파이썬 queue 모듈은 기본 큐(Queue), 우선순위 큐(PriorityQueue), 스택(LifoQueue)을 제공한다.
+# 6) 파이썬 라이브러리를 이용한 Queue
+# - queue 라이브러리는 기본 큐(Queue), 우선순위 큐(PriorityQueue), 스택(LifoQueue)을 제공한다. 
 import queue
-que = queue.Queue()
-que.put(1)
-que.put(2)
-que.put(3)
-# print(que.get())
-# print(que.get())
+lib_queue = queue.Queue()
+lib_queue.put(0)
+lib_queue.put(1)
+lib_queue.put(2)
+print(lib_queue.get())
+print(lib_queue.get())
