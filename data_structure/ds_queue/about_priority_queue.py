@@ -44,9 +44,3 @@ for i in range(10):
 
 while max_heap:
   print(heapq.heappop(max_heap)[1]) # 인덱스를 안붙이면 (1, 'a') 형태로 출력함. 
-  
-
-# 7) 직접 구현하기 
-
-
-
