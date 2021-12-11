@@ -1,2 +1,0 @@
-# Deque implementation in Python
-
