@@ -1,5 +1,5 @@
 # Deque implementation in python
-
+# 길이에 제한이 없는 경우
 class Deque():
     def __init__(self):
         self.deque = []
