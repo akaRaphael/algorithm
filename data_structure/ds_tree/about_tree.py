@@ -2,7 +2,7 @@
 # - Tree는 노드와 브랜치를 이용하여 구현된, 사이클이 없는 자료구조다.
 # - Tree는 이진트리의 형태로 구현되어 탐색 알고리즘 구현에 사용된다. 
 
-# 2) Binary Tree란?
+# 2) Binary Tree(이진탐색트리)란?
 # - 자식노드가 최대 2개로 이루어진 트리 
 # - 이진탐색(검색)트리의 형태로 탐색을 위해 자주 사용된다. 
 
@@ -23,14 +23,14 @@
 #   - 모든 노드가 0개 또는 2개의 자식노드를 가지고 있는 이진트리 
 
 # b. Perfect Binary Tree
-#   - 모든 노드와 2개의 자식노드를 가지고 있는 이진트리 
-#   - 모든 단말노드(leaf)가 동일한 level과 depth를 가진 이진트리 
+#   - 모든 노드가 2개의 자식노드를 가지고 있는 이진트리 
+#   - 모든 단말노드(leaf)가 동일한 level을 가진 이진트리 
 
-# c. Complete Binary Tree
+# c. Complete Binary Tree(완전이진트리)
 #   - 마지막 level 이전까지 모든 노드가 채워진 이진트리 
 #   - 마지막 level의 단말노드(leaf)는 왼쪽 노드부터 채워지는 이진트리 
-#   - 완전이진트리를 이용하여 Binary heap을 만들 수 있는데, 이것이 Heap이다.
+#   - 완전이진트리를 이용하여 구현된 Binary heap을 Heap이라고 부른다.
 
-# d. Degenerate (or Pathological) Tree
+# d. Degenerate or Pathological Tree
 #   - 모든 노드가 1개의 자식노드만을 가진 트리 
 #   - 연결리스트와 성능은 동일하다. 
