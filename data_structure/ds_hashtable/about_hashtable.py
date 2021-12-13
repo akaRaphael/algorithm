@@ -56,8 +56,12 @@
 # - 이를 보완한 Quadratic Probing, Double Hashing 기법이 있다.
 
 # 8) Quadratic Probing과 Double Hashing 기법 
-# - 핵심만 설명하자면, 두 기법 모두 클러스터링을 예방하기위해 
-# - 데이터를 띄엄띄엄 저장하는 방법이다.
+# - 핵심만 설명하자면, 두 기법 모두 클러스터링을 예방하기 위해 데이터를 띄엄띄엄 저장하는 방법이다.
+#   a. Quadratic Probing
+#     - Linear Probing과 동일하게 작동하지만, 클러스터링을 예방하기 위해 연속으로 저장되는 데이터의 간격이 넓다.
+#   b. Double Hashing
+#     - 2가지 종류의 Hash function을 사용하여 1차적으로 hashing된 키가 collision을 일으키는 경우, 
+#     - 다른 Hash function을 적용하여 새로운 key를 생성하는 방법 
 
 # 9) 결론
 # - 위에서 언급한 Hash table 사용시 발생하는 다양한 문제점을 해결하는 방법이 있다.
