@@ -26,7 +26,7 @@
 # - 연결리스트라는 추가적인 자료구조 및 공간을 사용하는 것이 단점으로 꼽힌다. 
 
 # 7) Hash Collision 해결책 - Linear Probing
-# - Close Hasing 기법 중 하나 
+# - Close Hasing(= open addressing) 기법 중 하나 
 # - 중복되는 key에 해당하는 데이터를, HashTable의 다음 빈공간에 저장하는 방법 
 # - Hash Table의 공간낭비를 최소화하는 방법이자, Chaining기법의 보완책 
 # - Hash Table의 저장공간 활용도를 높이는 방법
