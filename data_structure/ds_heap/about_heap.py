@@ -17,7 +17,6 @@
 # - Heap은 형제노드간의 규칙이 없고 부모/자식노드간의 규칙은 존재한다.
 
 # 5) Heap의 기본동작 
-
 #  a. 삽입과정 
 #   - 완전이진트리를 기반하므로, 노드가 삽입될 때 최하단 좌측 노드부터 채워진다. 
 #   - 삽입 후 Min/Max-heap의 여부에 따라 swap하며 정렬이 진행된다. 
@@ -37,14 +36,13 @@
 
 # 7) 리스트를 이용한 Max Heap 구현 
 class Heap():
-  def __init__(self, data):
+  def __init__(self,data):
     self.heap_array = list()
-    self.heap_array.append(None)  
+    self.heap_array.append(None)
     self.heap_array.append(data)
     
-  def checkSorting(self, insert_index): 
-    # 삽입된 데이터의 위치에 따라 정렬이 필요한지 검사 
-    if insert_index < 2: # heap에 아무 데이터도 없는 경우 
+  def move_up(self, insert_index): # 부모노드 < 자식노드 경우를 검증 (삽입시 사용)
+    if insert_index <= 1:
       return False
     else:
       parent_index = insert_index // 2
@@ -52,66 +50,93 @@ class Heap():
         return True
       else:
         return False
-
+  
   def insert(self, data):
-    if len(self.heap_array) == 0: # heap이 비어있는 경우 
+    if len(self.heap_array) == 0: # heap 객체에 데이터가 없는 경우 
       self.heap_array.append(None)
       self.heap_array.append(data)
       return True
-    else: # heap에 데이터가 존재하는 경우 
-      self.heap_array.append(data)
-      
-    insert_index = len(self.heap_array) - 1 # 가장 마지막에 삽입된 노드의 위치 
     
-    while self.checkSorting(insert_index): # True라면 정렬 필요
+    # heap 객체에 데이터가 있는 경우 
+    self.heap_array.append(data)
+    insert_index = len(self.heap_array) - 1 # 방금 삽입된 data의 위치 찾기
+    
+    while self.move_up(insert_index):
       parent_index = insert_index // 2
-      self.heap_array[insert_index], self.heap_array[parent_index] = self.heap_array[parent_index], self.heap_array[insert_index]
+      self.heap_array[parent_index], self.heap_array[insert_index] = self.heap_array[insert_index], self.heap_array[parent_index]
       insert_index = parent_index
       
     return True
+      
+  def move_down(self, pop_index): # 부모노드 < 자식노드 경우를 검증(삭제시 사용)
+    left_child = pop_index * 2
+    right_child = pop_index * 2 + 1
+    
+    # case1) root의 좌측 자식노드가 없는 경우 
+    # - 배열의 길이보다 좌측자식노드의 index가 크거나 같을 수 없다. 즉, 존재하지 않는 index 
+    if left_child >= len(self.heap_array): 
+      return False # 재정렬 불필요 
+    
+    # case2) root의 우측 자식노드가 없는 경우 = 좌측노드만 존재하는 경우 
+    elif right_child >= len(self.heap_array): 
+      # 삭제된 root 자리에 들어간 마지막 노드가 자식노드보다 작은경우 
+      if self.heap_array[pop_index] < self.heap_array[left_child]:
+        return True # 재정렬 필요
+      else:
+        return False # 현재 root의 값이 root의 자식노드보다 큰 경우, 재정렬 불필요 
+      
+    # case3) root의 좌/우측 자식노드가 모두 존재하는 경우 
+    else:
+      if self.heap_array[left_child] > self.heap_array[right_child]: # 좌측 자식노드 > 우측 자식노드
+        if self.heap_array[pop_index] < self.heap_array[left_child]: # 현재 root노드 < 좌측 자식노드 
+          return True
+        else:
+          return False
+      else: # 좌측 자식노드 < 우측 자식노드 
+        if self.heap_array[pop_index] < self.heap_array[right_child]: # 현재 root노드 < 우측 자식노드 
+          return True
+        else:
+          return False
   
   def pop(self):
     if len(self.heap_array) <= 1:
       return None
     
-    result = self.heap_array[1]
-    return result
-  
-  def sorting(self, popped_index):
-    left  = popped_index * 2
-    right = popped_index * 2 + 1
+    return_data = self.heap_array[1] # 루트노드를 지역변수에 저장 
+    self.heap_array[1] = self.heap_array[-1] # 마지막 노드를 루트노드로 설정 (재정렬 준비)
+    del self.heap_array[-1] # 현재 루트노드에 위치한 마지막 노드를 삭제 
     
-    if left >= len(self.heap_array): # 좌측 자식노드가 없는 경우 
-      return False
-    
-    elif right >= len(self.heap_array): # 우측 자식노드가 없는 경우 = 좌측 자식노드만 존재
-      if self.heap_array[popped_index] < self.heap_array[left]:
-        return True # 재정렬 필요 
-      else:
-        return False # 재정렬 불필요 
+    pop_index = 1
+    while self.move_down(pop_index):
+      left_child = pop_index * 2
+      right_child = pop_index * 2 + 1
       
-    else: # 좌/우측 자식노드가 모두 존재 
-      if self.heap_array[left] > self.heap_array[right]: # 좌측 자식노드가 우측 자식노드보다 더 크고 
-        if self.heap_array[popped_index] < self.heap_array[left]: # 현재 루트노드가 더 작다면  
-          return True # 재정렬 필요 
+      # 우측 자식노드가 없는 경우 = 좌측 자식노드만 존재하는 경우
+      if right_child >= len(self.heap_array):
+        if self.heap_array[pop_index] < self.heap_array[left_child]:
+          self.heap_array[pop_index], self.heap_array[left_child] = self.heap_array[left_child], self.heap[pop_index]
+          pop_index = left_child
+          
+      else: # 좌우측 자식노드가 모두 존재하는 경우 
+        if self.heap_array[left_child] > self.heap_array[right_child]:
+          if self.heap_array[pop_index] < self.heap_array[left_child]:
+            self.heap_array[pop_index], self.heap_array[left_child] = self.heap_array[left_child], self.heap_array[pop_index]
+            pop_index = left_child
         else:
-          return False 
-      else:
-        if self.heap_array[popped_index] < self.heap_array[right]: # 현재 루트노드가 우측노드보다 더 크다면 
-          return True # 재정렬 필요 
-        else:
-          return False
+          if self.heap_array[pop_index] < self.heap_array[right_child]:
+            self.heap_array[pop_index], self.heap_array[right_child] = self.heap_array[right_child], self.heap_array[pop_index]
+            pop_index = right_child
+    return return_data
         
-heap = Heap(0)
+heap = Heap(15)
 heap.insert(1)
 heap.insert(2)
 heap.insert(3)
 heap.insert(4)
 print(heap.heap_array)
-
-  
-  
-      
-    
-    
-    
+print(heap.pop())
+print(heap.heap_array)
+heap.insert(20)
+print(heap.heap_array)
+heap.insert(19)
+print(heap.heap_array)
