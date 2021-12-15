@@ -42,3 +42,7 @@ def bfs(graph, start_vertex):
 
 print(bfs(graph, 'A')) 
   
+# 4) BFS 시간복잡도 => O(Vertex + Arc)
+# - BFS는 while문 내부의 need_visit Queue의 길이에 의해 시간복잡도가 결정된다. 
+# - need_visit Queue의 길이는 Vertex와 Arc의 갯수에 의해 결정된다.
+# - 그러므로 BFS의 시간복잡도는 O(V + A)가 된다.
