@@ -1,6 +1,8 @@
-# 다익스라 알고리즘이란?
+# 1) 다익스라 알고리즘이란?
 #  - 최단거리 알고리즘 중 하나로, 단일출발 케이스를 구하는 알고리즘  
 #  - 우선순위 큐(min-heap)를 사용하여 구현한다. 
+#  - 가중치를 사용하기에 동일한 목적지의 가중치 합이 더 큰 경로가 나오면 계산을 스킵한다.
+#  - 그러므로, 최단경로를 우선적으로 계산한다는 것이 장점이다. 
 
 import heapq
 
@@ -13,26 +15,24 @@ graph = {
 }
 
 def dijikstra(graph, start):
-  distances = {node:float('inf') for node in graph} #모든 노드의 가중치를 무한(int)으로 설정한 딕셔너리 생성 
-  distances[start] = 0 # 시작 노드의 거리
-  pr_queue = [] # 우선순위 큐 생성
+  distances = {node:float('inf') for node in graph}
+  distances[start] = 0
+  queue = []
+  heapq.heappush(queue, [distances[start], start])
   
-  heapq.heappush(pr_queue, [distances[start], start])
-  
-  while pr_queue:
-    current_distance, current_node = heapq.heappop(pr_queue)
+  while queue:
+    current_distance, current_node = heapq.heappop(queue)
+    
     if distances[current_node] < current_distance:
       continue
     
     for adjacent, weight in graph[current_node].items():
-      cal_distance = current_distance + weight
-      if cal_distance < distances[adjacent]:
-        distances[adjacent] = cal_distance
-        heapq.heappush(pr_queue, [cal_distance, adjacent])  
-  
+      distance = current_distance + weight
+      
+      if distance < distances[adjacent]:
+        distances[adjacent] = distance
+        heapq.heappush(queue, [distance, adjacent])
+        
   return distances
-
+        
 print(dijikstra(graph, 'A'))
-
-
-  
