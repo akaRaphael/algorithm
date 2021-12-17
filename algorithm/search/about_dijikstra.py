@@ -32,7 +32,6 @@ def dijikstra(graph, start):
       if distance < distances[adjacent]:
         distances[adjacent] = distance
         heapq.heappush(queue, [distance, adjacent])
-        
   return distances
         
 print(dijikstra(graph, 'A'))
