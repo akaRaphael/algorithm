@@ -4,8 +4,6 @@
 #  - 가중치를 사용하기에 동일한 목적지의 가중치 합이 더 큰 경로가 나오면 계산을 스킵한다.
 #  - 그러므로, 최단경로를 우선적으로 계산한다는 것이 장점이다. 
 
-import heapq
-
 graph = {
   'A':{'B':8, 'C':1, 'D':2},
   'B':{}, 'C':{'B':5, 'D':2},
@@ -13,6 +11,8 @@ graph = {
   'E':{'F':1},
   'F':{'A':5}
 }
+
+import heapq
 
 def dijikstra(graph, start):
   distances = {node:float('inf') for node in graph}
@@ -22,16 +22,14 @@ def dijikstra(graph, start):
   
   while queue:
     current_distance, current_node = heapq.heappop(queue)
-    
-    if distances[current_node] < current_distance:
+    if current_distance > distances[current_node]:
       continue
     
     for adjacent, weight in graph[current_node].items():
-      distance = current_distance + weight
-      
-      if distance < distances[adjacent]:
-        distances[adjacent] = distance
-        heapq.heappush(queue, [distance, adjacent])
+      sum_distance = weight + current_distance
+      if sum_distance < distances[adjacent]:
+        distances[adjacent] = sum_distance
+        heapq.heappush(queue, [sum_distance, adjacent])
   return distances
-        
+
 print(dijikstra(graph, 'A'))
