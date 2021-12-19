@@ -40,26 +40,21 @@ graph = {
   ]
 }
 
-parent = dict() # 루트 노드 정보를 저장
-rank = dict() # 각 부분집합의 rank를 저장
+parent = dict()
+rank = dict()
 
 def kruskal(graph):
   mst = list()
-  
   for node in graph['nodes']:
-    make_set(node) # 각 노드를 개별 집합화 
+    make_set(node)
     
   edges = graph['edges']
-  edges.sort() # 간선 오름차순 정리 
-  
+  edges.sort()
   for edge in edges:
-    # ex) edge = (11, A, B) => weight = 11, node_v = A, node_u = B
     weight, node_v, node_u = edge
-    
     if find(node_v) != find(node_u):
       union(node_v, node_u)
       mst.append(edge)
-      
   return mst
 
 def make_set(node):
@@ -68,11 +63,10 @@ def make_set(node):
   
 def find(node):
   if parent[node] != node:
-    parent[node] = find(parent[node]) # 재귀적으로 루트를 탐색 
-  
+    parent[node] = find(parent[node])
   return parent[node]
 
-def union(node_v, node_u): # Union By Rank 기법을 사용 
+def union(node_v, node_u):
   root1 = find(node_v)
   root2 = find(node_u)
   
@@ -82,7 +76,5 @@ def union(node_v, node_u): # Union By Rank 기법을 사용
     parent[root1] = root2
     if rank[root1] == rank[root2]:
       rank[root2] += 1
-
+      
 print(kruskal(graph))
-    
-  
