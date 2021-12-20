@@ -47,11 +47,10 @@ def prim(start, edges):
     
   connected_nodes = set(start)
   candidate_list = adjacent_edges[start]
-  heapify(candidate_list)
+  heapify(candidate_list) 
   
   while candidate_list:
     weight, node_from, node_to = heappop(candidate_list)
-    
     if node_to not in connected_nodes:
       connected_nodes.add(node_to)
       mst.append((weight, node_from, node_to))
@@ -60,3 +59,5 @@ def prim(start, edges):
         if edge[2] not in connected_nodes:
           heappush(candidate_list, edge)
   return mst
+  
+print(prim('A', edges))
