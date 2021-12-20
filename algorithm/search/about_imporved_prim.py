@@ -48,6 +48,7 @@ def imp_prim(graph, start):
   update_history = dict()
   total_weight = 0
   
+  # 초기화 작업 
   for node in graph.keys():
     keys[node] = float('inf')
     update_history[node] = None
@@ -62,6 +63,7 @@ def imp_prim(graph, start):
       if adjacent in keys and weight < keys[adjacent]:
         keys[adjacent] = weight
         update_history[adjacent] = current_node
+        
   return mst, total_weight
 
 mst, total = imp_prim(graph, 'A')
