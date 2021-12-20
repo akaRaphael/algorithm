@@ -45,5 +45,26 @@ from heapdict import heapdict
 def imp_prim(graph, start):
   mst = list()
   keys = heapdict()
+  update_history = dict()
+  total_weight = 0
   
+  for node in graph.keys():
+    keys[node] = float('inf')
+    update_history[node] = None
+  keys[start], update_history[start] = 0, start
+  
+  while keys:
+    current_node, current_key = keys.popitem()
+    mst.append([update_history[current_node], current_node, current_key])
+    total_weight += current_key
+    
+    for adjacent, weight in graph[current_node].items():
+      if adjacent in keys and weight < keys[adjacent]:
+        keys[adjacent] = weight
+        update_history[adjacent] = current_node
+  return mst, total_weight
 
+mst, total = imp_prim(graph, 'A')
+
+print(mst)
+print(total)
