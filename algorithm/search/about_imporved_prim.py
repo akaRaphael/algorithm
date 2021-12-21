@@ -39,17 +39,15 @@ graph = {
   'E': {'B': 7, 'C': 5, 'D': 7, 'F': 8, 'G': 9}, 
   'F': {'D': 6, 'E': 8, 'G': 11}, 'G': {'E': 9, 'F': 11}
 }
-
 from heapdict import heapdict
 
-def imp_prim(graph, start):
+def improved_prim(graph, start):
   mst = list()
   keys = heapdict()
   update_history = dict()
   total_weight = 0
   
-  # 초기화 작업 
-  for node in graph.keys():
+  for node in graph:
     keys[node] = float('inf')
     update_history[node] = None
   keys[start], update_history[start] = 0, start
@@ -63,10 +61,9 @@ def imp_prim(graph, start):
       if adjacent in keys and weight < keys[adjacent]:
         keys[adjacent] = weight
         update_history[adjacent] = current_node
-        
   return mst, total_weight
 
-mst, total = imp_prim(graph, 'A')
+mst, total = improved_prim(graph, 'A')
 
 print(mst)
 print(total)
