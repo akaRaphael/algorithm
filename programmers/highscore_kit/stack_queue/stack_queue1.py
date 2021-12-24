@@ -30,6 +30,7 @@ def solution1(progresses, speeds):
       day += 1
   answer.append(count)
   return answer
+
 print(solution1([93, 30, 55],[1, 30, 5]))
 
 # 가장 많이 좋아요를 받은 풀이 
