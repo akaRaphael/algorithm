@@ -27,21 +27,23 @@ def solution1(progresses, speeds):
       if count > 0:
         answer.append(count)
         count = 0
-      day += 1
+      else:
+        day += 1
   answer.append(count)
   return answer
 
-print(solution1([93, 30, 55],[1, 30, 5]))
 
 # 가장 많이 좋아요를 받은 풀이 
 def solution2(progresses, speeds):
     Q=[]
     for p, s in zip(progresses, speeds):
-        if len(Q)==0 or Q[-1][0]<-((p-100)//s):
-            Q.append([-((p-100)//s),1])
+        if len(Q) == 0 or Q[-1][0] < -((p-100) // s):
+            Q.append([-((p-100) // s),1])
         else:
-            Q[-1][1]+=1
+            Q[-1][1] += 1
     return [q[1] for q in Q]
+
+print(solution2([93, 30, 55],[1, 30, 5]))
 
 # Stack / Queue 문제 Tips!!! 
 # 1) 모든 풀이 과정을 다 리스트에 담아두는 방식으로 접근하지 x --> 원하는대로 구현이 안되기 쉽상. 
