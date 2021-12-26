@@ -4,7 +4,9 @@
 # bridge_len = 한번에 다리에 오를 수 있는 트럭의 수, 다리를 완전히 지나는데 걸리는 시간 
 # weight = 다리가 견딜 수 있는 트럭의 무게 
 # truck_weight = 다리를 건너기 위해 대기중인 트럭과 각 트럭의 무게
+
 # * 문제의 핵심은 겹치는 시간을 어떻게 계산할 것인가 
+#   => 모든 단계를 세분화하여 과정 하나당 무조건 1초씩 시간이 증가하도록 한다. 
 
 # 내가 풀이한 코드(풀이시간 - 2일, 21.12.25 ~ 21.12.26)
 # 비효율 요소 1. on_bridge 생성시간이 input 크기에 비례해서 증가
@@ -81,12 +83,10 @@ def solution(bridge_length, weight, truck_weights):
 
     return count
 
-
 def main():
     print(solution(2, 10, [7, 4, 5, 6]), 8)
     print(solution(100, 100, [10]), 101)
     print(solution(100, 100, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]), 110)
-
 
 if __name__ == '__main__':
     main()
