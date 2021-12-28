@@ -28,65 +28,31 @@ print(solution(100, 100, [10]))
 print(solution(100, 100, [10,10,10,10,10,10,10,10,10,10]))
 
 
-# 프로그래머스에서 가장 좋아요를 많이 받은 솔루션 
-import collections
-DUMMY_TRUCK = 0
-class Bridge(object):
-  def __init__(self, length, weight):
-      self._max_length = length
-      self._max_weight = weight
-      self._queue = collections.deque()
-      self._current_weight = 0
+# 다른 풀이법 (deque)
+# - list를 사용하면 pop할 때마다 재정렬을 해야한다. 
+# - 재정렬 하는 비용을 절약하기 위해 deque를 사용해서 구현해본다. 
+from collections import deque
 
-  def push(self, truck):
-      next_weight = self._current_weight + truck
-      if next_weight <= self._max_weight and len(self._queue) < self._max_length:
-          self._queue.append(truck)
-          self._current_weight = next_weight
-          return True
-      else:
-          return False
+def solution2(bridge_length, weight, truck_weights):
+    truck_weights = deque(truck_weights)
+    on_bridge = deque([0 for _ in range(bridge_length)])
+    time = 0 
+    bridge_weight = 0 
+    
+    while len(on_bridge) != 0:
+        out = on_bridge.popleft()
+        bridge_weight -= out
+        time += 1
+        if truck_weights:
+            if bridge_weight + truck_weights[0] <= weight:
+                truck = truck_weights.popleft()
+                bridge_weight += truck
+                on_bridge.append(truck)
+            else:
+                on_bridge.append(0)
+    return time
 
-  def pop(self):
-      item = self._queue.popleft()
-      self._current_weight -= item
-      return item
-
-  def __len__(self):
-      return len(self._queue)
-
-  def __repr__(self):
-      return 'Bridge({}/{} : [{}])'.format(self._current_weight, self._max_weight, list(self._queue))
-
-
-def solution(bridge_length, weight, truck_weights):
-    bridge = Bridge(bridge_length, weight)
-    trucks = collections.deque(w for w in truck_weights)
-
-    for _ in range(bridge_length):
-        bridge.push(DUMMY_TRUCK)
-
-    count = 0
-    while trucks:
-        bridge.pop()
-
-        if bridge.push(trucks[0]):
-            trucks.popleft()
-        else:
-            bridge.push(DUMMY_TRUCK)
-
-        count += 1
-
-    while bridge:
-        bridge.pop()
-        count += 1
-
-    return count
-
-def main():
-    print(solution(2, 10, [7, 4, 5, 6]), 8)
-    print(solution(100, 100, [10]), 101)
-    print(solution(100, 100, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]), 110)
-
-if __name__ == '__main__':
-    main()
+print(solution2(2, 10, [7,4,5,6])) 
+print(solution2(100, 100, [10]))
+print(solution2(100, 100, [10,10,10,10,10,10,10,10,10,10]))
+                
