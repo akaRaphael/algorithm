@@ -55,4 +55,3 @@ def solution2(bridge_length, weight, truck_weights):
 print(solution2(2, 10, [7,4,5,6])) 
 print(solution2(100, 100, [10]))
 print(solution2(100, 100, [10,10,10,10,10,10,10,10,10,10]))
-                
