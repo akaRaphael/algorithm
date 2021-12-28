@@ -53,9 +53,7 @@ def solution(numbers):
 
 def solution2(numbers):
   numbers = list(map(str, numbers))
-  print(numbers)
   numbers.sort(key = lambda x: x * 3, reverse = True)
-  print(numbers)
   return str(int("".join(numbers)))
 
 print(solution2(numbers))
