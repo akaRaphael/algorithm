@@ -18,3 +18,4 @@ with open('myfile.txt') as file:
 
 # - 우선 with-as 키워드를 사용하기에 파일을 close()하지 않아도 된다.
 # - 더불어 file.readlines()가 EOF 까지만 파일을 자동으로 읽기 때문에, break도 필요하지 않다.
+# - 추가적으로, with-as 구문은 파일 뿐만 아니라 socket, http 등에서도 사용할 수 있다.
