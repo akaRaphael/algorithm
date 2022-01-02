@@ -65,5 +65,30 @@ def solution2(jobs):
     else: # 현재 처리할 작업이 없는 경우, 다음 시간으로 넘어감 
       now += 1
   return answer // len(jobs)
-
 print(solution2(jobs))
+
+# 다른 사람의 풀이  
+def solution3(jobs):
+  jobs.sort()
+  count, start_time = 0, -1 
+  heap = []
+  time = jobs[0][0]
+  length = len(jobs)
+  answer = 0
+  
+  while count < length:
+    for s, t in jobs:
+      if start_time < s <= time:
+        heapq.heappush(heap, (t, s))
+    if len(heap) > 0:
+      start_time = time
+      duration, start = heapq.heappop(heap)
+      count += 1
+      time += duration
+      answer += (time - start)
+    else:
+      time += 1
+  
+  return answer // length
+
+print(solution3(jobs))
