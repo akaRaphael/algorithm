@@ -7,7 +7,7 @@
 # ["I 16","D 1"] / [0, 0]
 # ["I 7","I 5","I -5","D -1"] / [7, 5]
 
-operations = ["I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"]
+operations = ["I 7","I 5","I -5","D -1"] 
 
 # 내가 짠 코드 => 통과 
 def solution(operations):
@@ -21,10 +21,9 @@ def solution(operations):
         answer.remove(min(answer))
       else:
         answer.remove(max(answer))
-  if len(answer) == 0:
-    answer = [0,0]
-  else:
-    answer = [max(answer), min(answer)]    
-  return answer
+  if answer == []:
+    return [0,0]    
+  
+  return [max(answer), min(answer)]
 
 print(solution(operations))
