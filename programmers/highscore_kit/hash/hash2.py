@@ -24,7 +24,7 @@ def solution(phone_book):
 
 print(solution(phone_book))
 
-# 다른 사람의 솔루션 => zip
+# 프로그래머스에서 좋아요가 가장 많은 솔루션 
 def solution2(phone_book):
   phone_book = sorted(phone_book)
   for p1, p2 in zip(phone_book, phone_book[1:]):
@@ -33,19 +33,3 @@ def solution2(phone_book):
   return True
 
 print(solution2(phone_book))
-
-# 다른 사람의 솔루션 => hash
-def solution3(phone_book):
-  answer = True
-  hash_map = {}
-  for phone_number in phone_book:
-    hash_map[phone_number] = 1
-  for phone_number in phone_book:
-    temp = ""
-    for number in phone_number:
-      temp += number
-      if temp in hash_map and temp != phone_number:
-        answer = False
-  return answer
-
-print(solution3(phone_book))
