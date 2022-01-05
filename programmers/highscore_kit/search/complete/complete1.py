@@ -11,7 +11,7 @@ def solution(answers):
   candidate2 = [2,1,2,3,2,4,2,5] * answer_length
   candidate3 = [3,3,1,1,2,2,4,4,5,5] * answer_length
 
-  candidate_score = [0] * 3
+  candidate_score = [0,0,0]
     
   for idx, number in enumerate(answers):
     if candidate1[idx] == number:
@@ -24,8 +24,9 @@ def solution(answers):
       candidate_score[2] += 1
   
   result = []
+  max_score = max(candidate_score)
   for idx, score in enumerate(candidate_score):
-    if score == max(candidate_score):
+    if score == max_score:
       result.append(idx + 1)
       
   return result
