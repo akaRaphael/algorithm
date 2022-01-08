@@ -13,41 +13,13 @@
 
 # 좌우를 역방향으로 움직이는게 더 최소인 경우는? 
 # => 가운데 글자가 A인 경우 즉, 좌측으로 이동했을 때 마지막 문자로 이동이 가능한 위치 
-# => 예를 들어서  JANENNO의 경우, 탐색을 역순으로 가야함.
+# => 예를 들어서 JANENNO의 경우, 탐색을 역순으로 가야함.
 # => 즉, A가 index 1번자리에 나오면 탐색이 역순이어야 함.
 
+# 내가 짠 코드 
+# => 테스트 케이스 마지막 2개가 도무지 풀리지 않는다. 
+# => 내가 생각하지 못한 부분은 A가 등장할 때 처리하는 경우의 수가 더 있다는 것이다.
+# => 내가 생각한 부분은 A가 index 0번과 1번에 등장할 때 역순으로 간다는 것이다.
+# => 그러나 BBBAAABB의 경우에도 AAA를 그냥 처리하는 것 보다 역순으로 이동하는 것이 최소가 된다. 
 def solution(name):
-  start = 65
-  end = 90
-  move = 0
-  answer = []
-  
-  for idx, char in enumerate(name):
-    letter = ord(char)
- 
-    if idx < len(name) - 1:
-      move = 1
-    else: 
-      move = 0
-      
-    if (letter - start) > (end - letter + 1):
-      answer.append(end - letter + 1 + move)
-    else:
-      answer.append(letter - start + move)
-      
-    # if len(name[idx + 1:]) == 2:
-    #   if name[idx + 1] == 'A':
-    #     last = ord(name[-1])
-    #     if (last - start) > (end - last + 1):
-    #       answer.append(end - last + 1)
-    #       break
-    #     else:
-    #       answer.append(last - start)
-    #       break
-  
-  print(answer)
-  return sum(answer)
-
-print(solution("JEROEN"))
-
-   
+    
