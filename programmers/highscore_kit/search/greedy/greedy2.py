@@ -2,22 +2,33 @@
 # 조이스틱
 # https://programmers.co.kr/learn/courses/30/lessons/42860
 
+# ***** 내가 풀지 못한 문제 => 테스트케이스 10번 11번이 계속 틀림 
 
-# 알파벳 = 26개 
+name = "JAAAZZ"
 
-# 기본 시작은 A 부터 시작임 
-# 아스키 번호, A가 시작점, 몇번 조작했는지 count 필요 
-# 한 글자 완성할 때마다 알파벳과 조작횟수를 엮어줘야함 
-# A를 시작으로 역방향과 정방향 중 어떤 방향이 조작횟수가 적은지 비교해야함
-# 최소 조작횟수를 찾아야함 
+# 다른사람의 솔루션 
+def solution(name):
+  change = [min(ord(i) - 65, 90 - ord(i) + 1) for i in name]
+  idx = 0
+  answer = 0
+  
+  while True:
+    answer += change[idx]
+    change[idx] = 0
+    if sum(change) == 0:
+      return answer
+    
+    left, right = 1, 1
+    while change[idx - left] == 0:
+      left += 1
+    while change[idx + right] == 0:
+      right += 1
+      
+    answer += left if left < right else right
+    idx += -left if left < right else right
+    
+print(solution(name))
 
-# 좌우를 역방향으로 움직이는게 더 최소인 경우는? 
-# => 가운데 글자가 A인 경우 즉, 좌측으로 이동했을 때 마지막 문자로 이동이 가능한 위치 
-# => 예를 들어서 JANENNO의 경우, 탐색을 역순으로 가야함.
-# => 즉, A가 index 1번자리에 나오면 탐색이 역순이어야 함.
 
-# 내가 짠 코드 
-# => 테스트 케이스 마지막 2개가 도무지 풀리지 않는다. 
-# => 내가 생각하지 못한 부분은 A가 등장할 때 처리하는 경우의 수가 더 있다는 것이다.
-# => 내가 생각한 부분은 A가 index 0번과 1번에 등장할 때 역순으로 간다는 것이다.
-# => 그러나 BBBAAABB의 경우에도 AAA를 그냥 처리하는 것 보다 역순으로 이동하는 것이 최소가 된다. 
+      
+    
