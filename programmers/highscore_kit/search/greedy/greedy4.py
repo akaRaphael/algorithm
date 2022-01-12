@@ -7,37 +7,32 @@
 # [70, 50, 80, 50] / 100 / 3
 # [70, 80, 50] / 100 / 3
 
-people = [70, 50, 80, 50] 
-limit = 100
-# 내가 짠 코드 
-# 최소 무게가 40키로라는 점을 이용한다.
-# 한 사람을 태우고 남은 무게가 40보다 작으면 패스 
-# 남은 무게가 40보다 크다면 남은 거에서 순회해서 남은무게보다 작거나 같은 무게를 가진 사람을 찾음
 
-import heapq
+# *********** 스스로 풀지 못한 문제 (4시간 투자함)
+
+people = [70, 80, 50] 
+limit = 100
+
+# 다른 사람의 솔루션 
 def solution(people, limit):
+  left = 0
+  right = len(people) - 1
   count = 0
-  stack = []
-  heapq.heapify(people)
+  people.sort()
   
-  while len(people) > 0:
-    curn = heapq.heappop(people)
-    if (limit - curn) < 40:
-      count += 1
-    else:
-      if sum(stack) + curn > limit:
-        stack = []
-        count += 1
-        stack.append(curn)
-      else:
-        stack.append(curn)  
-        
-  if len(stack) > 0:
+  while left <= right:
     count += 1
-        
+    if people[left] + people[right] <= limit:
+      left += 1
+    right -= 1
+      
   return count
 
 print(solution(people, limit))
-      
-      
-  
+
+# *이 문제의 포인트
+# 가장 무거운 사람을 태우되 남은 1자리를 가벼운 사람부터 차례대로 고려한다. 
+# 남은 사람들 중 가장 가벼운데 무게가 초과됬다는 말은 두번째로 가벼운 사람 역시 초과될 것이라는 뜻. 
+# 더 이상 고려할 필요가 없게 된다. 
+# 초과되면 무거운 사람만 보트에 한명 태우고 나머지 형식도 
+# 반복해서 최대한 무거운+가벼운 사람의 조합을 사용해 보트를 최소화 한다.
