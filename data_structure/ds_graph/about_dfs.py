@@ -45,3 +45,29 @@ print(dfs(graph, 'A'))
 # - BFS와 동일하게 need_visit Stack의 길이에 따라 시간복잡도가 달라진다.
 # - 그러므로 Vertex와 Arc의 수에 의해 시간복잡도가 결정된다. 
 # - 이와같은 이유로 DFS의 시간복잡도는 O(V + A)를 갖는다. 
+
+
+# 5) DFS 구현 연습 
+graph2 = [
+  [],
+  [2,3,8],
+  [1,7],
+  [1,4,5],
+  [3,5],
+  [3,4],
+  [7],
+  [2,6,8],
+  [1,7]
+]
+
+visited = [False] * 9
+
+def dfs2(graph, v, visited):
+  visited[v] = True
+  print(v, end = '')
+  
+  for i in graph[v]: 
+    if not visited[i]:
+      dfs2(graph2, i, visited)
+    
+dfs2(graph2, 1, visited)
