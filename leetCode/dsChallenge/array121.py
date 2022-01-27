@@ -1,7 +1,6 @@
 # Leet Code - DS 익히기 14일 챌린지 
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
-
 # Example 1:
 # Input: prices = [7,1,5,3,6,4]
 # Output: 5
