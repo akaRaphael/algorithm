@@ -1,6 +1,6 @@
 package java_algorithm.java_ds;
 
-public class ArrayStack {
+public class ArrayStackImpl {
 
     // 배열로 스택 구현하기 
 
@@ -8,7 +8,7 @@ public class ArrayStack {
     int size;
     int[] stack;
 
-    public ArrayStack(int size) {
+    public ArrayStackImpl(int size) {
         this.size = size;
         stack = new int[size];
         top = -1;

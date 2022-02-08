@@ -1,6 +1,6 @@
 package java_algorithm.java_ds;
 
-public class array {
+public class UseArray {
   public static void main(String[] args) {
 
     // 0. 자바 배열의 기본특징 

@@ -3,7 +3,7 @@ package java_algorithm.java_ds;
 public class Impl {
   public static void main(String[] args) {
     
-    ArrayStack arrayStack = new ArrayStack(10);
+    ArrayStackImpl arrayStack = new ArrayStackImpl(10);
 
     arrayStack.push(0);
     arrayStack.push(1);
