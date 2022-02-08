@@ -7,7 +7,7 @@ public class UseStack {
   public static void main(String[] args) {
 
     // 1. Stack 선언하기 
-    // => Stack 인터페이스는 Vector 인터페이스를 상속받는다. 
+    // => Stack 인터페이스는 Vector 클래스를 상속받는다. 
     Stack<Integer> intStack = new Stack<>();
 
     // 2. Stack 값 추가 
