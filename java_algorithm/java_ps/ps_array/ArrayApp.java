@@ -2,7 +2,7 @@ package java_algorithm.java_ps.ps_array;
 
 import java.util.HashSet;
 
-public class App {
+public class ArrayApp {
   public static void main(String[] args) {
 
     TwoSum foo = new TwoSum();
