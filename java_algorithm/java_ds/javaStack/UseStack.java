@@ -1,4 +1,4 @@
-package java_algorithm.java_ds;
+package java_algorithm.java_ds.javaStack;
 
 import java.util.Stack;
 
@@ -8,7 +8,6 @@ public class UseStack {
 
     // 1. Stack 선언하기 
     // => Stack 인터페이스는 Vector 인터페이스를 상속받는다. 
-    // => Vector는 
     Stack<Integer> intStack = new Stack<>();
 
     // 2. Stack 값 추가 

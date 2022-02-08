@@ -1,14 +1,29 @@
-package java_algorithm.java_ds;
+package java_algorithm.java_ds.javaStack;
 
 public class ArrayStackImpl {
 
-    // 배열로 스택 구현하기 
+    public static void main(String[] args) {
+        Stack arrayStack = new Stack(10);
 
+        arrayStack.push(0);
+        arrayStack.push(1);
+        arrayStack.push(2);
+        arrayStack.push(3);
+    
+        arrayStack.peek();
+        arrayStack.pop();
+        arrayStack.peek();
+    }
+
+}
+
+class Stack{
+    // 배열로 스택 구현하기 
     int top;
     int size;
     int[] stack;
 
-    public ArrayStackImpl(int size) {
+    public Stack(int size) {
         this.size = size;
         stack = new int[size];
         top = -1;
@@ -28,5 +43,4 @@ public class ArrayStackImpl {
     public void peek() {
         System.out.println("Peek = " + stack[top]);
     }
-    
 }
