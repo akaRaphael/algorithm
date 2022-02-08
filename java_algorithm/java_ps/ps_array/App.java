@@ -4,7 +4,36 @@ import java.util.HashSet;
 
 public class App {
   public static void main(String[] args) {
+
+    TwoSum foo = new TwoSum();
+
+    int[] nums = {2, 7, 11, 15};
+    int target = 9;
+
+    foo.twoSum(nums, target);
+
     
+  }
+}
+
+class TwoSum { //https://leetcode.com/problems/two-sum/
+  public int[] twoSum(int[] nums, int target) {
+    int idx = 0;
+    int length = nums.length;
+
+    for(int i = 0; i < length - 1; i++) {
+      int firstNum = nums[i];
+
+      for(int j = i + 1; j < length; j++) {
+        int secondNum = nums[j];
+
+        if(firstNum + secondNum == target) {
+          int[] result = new int[]{i, j};
+          return result;
+        }
+      }
+    }
+    return null;
   }
 }
 
