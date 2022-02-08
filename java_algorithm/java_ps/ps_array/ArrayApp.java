@@ -1,6 +1,8 @@
 package java_algorithm.java_ps.ps_array;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class ArrayApp {
   public static void main(String[] args) {
@@ -10,13 +12,30 @@ public class ArrayApp {
     int[] nums = {2, 7, 11, 15};
     int target = 9;
 
-    foo.twoSum(nums, target);
+    foo.twoSum2(nums, target);
 
     
   }
 }
 
 class TwoSum { //https://leetcode.com/problems/two-sum/
+
+  public int[] twoSum2(int[] nums, int target) {
+    Map<Integer, Integer> indexMap = new HashMap<>();
+
+    int[] result = new int[2];
+
+    for(int i = 0; i < nums.length; i++) {
+      if(indexMap.containsKey(target - nums[i])) {
+        result[0] = i;
+        result[1] = indexMap.get(target-nums[i]);
+        break;
+      }
+      indexMap.put(nums[i], i);
+    }
+    return result;
+  }
+
   public int[] twoSum(int[] nums, int target) {
     int idx = 0;
     int length = nums.length;
