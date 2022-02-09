@@ -9,9 +9,12 @@ public class ArrayListImpl<E> implements List<E>{
   private static final int DEFAULT_CAPACITY = 10; // 초기 할당 크기, 상수(static final) 
   private static final Object[] EMPTY_ARRAY = {}; // 빈 배열 선언, 상수 (static final) 
 
-  private int size; // 요소의 갯수(배열의 크기를 말하는게 아니다.)
+  // int size - 배열에 담긴 요소의 갯수(배열의 크기를 말하는게 아니다.)
+  private int size; 
 
-  Object[] array; // 요소를 담을 배열 
+  // Object[] array - 요소를 담을 배열
+  // => Object로 선언한 이유는 다양한 자료형의 데이터를 담기 위함이다.
+  Object[] array;   
 
   // 생성자1 (초기 공간 할당을 하지 않는다)
   // => 사용자가 객체만을 미리 생성하는 경우에 사용된다. 
