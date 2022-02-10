@@ -152,17 +152,17 @@ public class SingleLinkedList<E> implements List<E> {
 
     // 특정 위치의 노드를 삭제
     Node<E> prevNode = search(index - 1); // 삭제할 노드의 이전 노드 
-    Node<E> targetNode = prevNode.next; // 삭제할 노드 
-    Node<E> nextNode = targetNode.next; // 삭제할 노드의 다음 노드 
+    Node<E> removedNode = prevNode.next; // 삭제할 노드 
+    Node<E> nextNode = removedNode.next; // 삭제할 노드의 다음 노드 
 
-    E element = targetNode.data; // 삭제할 노드의 값을 반환할 변수 
+    E element = removedNode.data; // 삭제할 노드의 값을 반환할 변수 
 
     // 삭제할 노드 이전과 다음 노드의 연결설정 
     prevNode.next = nextNode;
 
     // 삭제할 노드의 데이터를 모두 삭제 
-    targetNode.data = null;
-    targetNode.next = null;
+    removedNode.data = null;
+    removedNode.next = null;
     size --;
 
     return element;
