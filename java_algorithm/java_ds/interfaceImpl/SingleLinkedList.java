@@ -4,6 +4,16 @@ import java.util.NoSuchElementException;
 
 public class SingleLinkedList<E> implements List<E> {
 
+  class Node<E> {
+    E data;
+    Node<E> next; // 다음 노드의 위치를 나타내는 참조데이터
+  
+    Node(E data) {
+      this.data = data;
+      this.next = null; 
+    }
+  }
+
   private Node<E> head; // 시작 노드 
   private Node<E> tail; // 마지막 노드 
   private int size; // 요소의 갯수 
@@ -269,15 +279,5 @@ public class SingleLinkedList<E> implements List<E> {
 
     head = tail = null;
     size = 0;
-  }
-}
-
-class Node<E> {
-  E data;
-  Node<E> next; // 다음 노드의 위치를 나타내는 참조데이터
-
-  Node(E data) {
-    this.data = data;
-    this.next = null; 
   }
 }
