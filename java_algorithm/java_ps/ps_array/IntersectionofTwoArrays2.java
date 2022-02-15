@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class IntersectionofTwoArrays2 {
+public class IntersectionofTwoArrays2 { // https://leetcode.com/problems/intersection-of-two-arrays-ii/
 
   public static void main(String[] args) {
 

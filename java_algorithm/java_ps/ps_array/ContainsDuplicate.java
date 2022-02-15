@@ -15,10 +15,10 @@ public class ContainsDuplicate { // https://leetcode.com/problems/contains-dupli
 
     for (int i : nums) {
       if (!foo.add(i)) {
-        return false;
+        return true;
       }
     }
-    return true;
+    return false;
   }
 
   
