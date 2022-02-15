@@ -8,8 +8,21 @@ public class BestTimetoBuyandSellStock { //https://leetcode.com/problems/best-ti
 
   public int maxProfit(int[] prices) {
 
+    int current = prices[0];
+    int maxProfit = 0;
 
-    return 0;
+    for(int i = 1; i < prices.length; i++) {
+
+      int temp = prices[i] - current;
+
+      if(temp < 0) {
+        current = prices[i];
+      } else {
+        maxProfit = (maxProfit > temp) ? maxProfit : temp;
+      }
+    }
+
+    return maxProfit;
   }
   
 }
