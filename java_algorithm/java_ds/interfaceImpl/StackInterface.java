@@ -16,7 +16,7 @@ public interface StackInterface<E> {
 
   // 4. 스택 내부에 특정 요소가 맨 위에서부터 몇번째에 존재하는지 알려주는 기능 
   // param - 검색할 요소, return - 특정 요소의 위치 
-  int search(Object value)
+  int search(Object value);
 
   // 5. 스택 내부 요소의 갯수를 반환하는 기능 
   // return - 스택 내부 요소의 갯수 
