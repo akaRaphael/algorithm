@@ -31,7 +31,7 @@ public class IntersectionofTwoArrays2 { // https://leetcode.com/problems/interse
     for (int i : nums2) {
       if(map.containsKey(i) && map.get(i) >= 1){
         list.add(i);
-        map.put(i, map.get(i) - 1);
+        map.put(i, map.get(i) - 1); // 중복을 제거하기 위해서 1 감소 시킴
       } 
     }
     
