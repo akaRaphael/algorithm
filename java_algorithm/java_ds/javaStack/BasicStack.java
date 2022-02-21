@@ -5,7 +5,7 @@ import java.util.EmptyStackException;
 
 import java_algorithm.java_ds.interfaceImpl.StackInterface;
 
-public class Stack<E> implements StackInterface<E> {
+public class BasicStack<E> implements StackInterface<E> {
 
   private static final int DEFAULT_CAPACITY = 10; // 최소 크기 
   private static final Object[] EMPTY_ARRAY = {}; // 빈 스택(= 배열) 
@@ -14,13 +14,13 @@ public class Stack<E> implements StackInterface<E> {
   private int size; // 요소의 갯수를 표시할 변수 
 
   // 생성자1 - 초기 공간 할당 x 
-  public Stack() {
+  public BasicStack() {
     this.array = EMPTY_ARRAY;
     this.size = 0;
   }
 
   // 생성자2 - 초기 공간 할당 수행 
-  public Stack(int capacity) {
+  public BasicStack(int capacity) {
     this.array = new Object[capacity];
     this.size = 0;
   }
