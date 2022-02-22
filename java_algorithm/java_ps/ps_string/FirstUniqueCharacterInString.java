@@ -1,3 +1,5 @@
+package java_algorithm.java_ps.ps_string;
+
 import java.util.HashMap;
 
 public class FirstUniqueCharacterInString {
