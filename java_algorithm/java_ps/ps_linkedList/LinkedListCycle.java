@@ -1,17 +1,22 @@
 import java.util.HashMap;
 
 //Definition for singly-linked list.
-class ListNode {
-  int val;
-  ListNode next;
-  ListNode(int x) {
-      val = x;
-      next = null;
-  }
-}
+// class ListNode {
+//     int val;
+//     ListNode next;
+//     ListNode(int x) {
+//         val = x;
+//         next = null;
+//       }
+// }
 
 public class LinkedListCycle {
-  public static void main(String[] args) {}
+  
+  public static void main(String[] args) {
+
+    ListNode test = new ListNode(3);
+
+  }
 
   // 내가 짠 코드 
   public boolean hasCycle(ListNode head) { 
@@ -37,6 +42,7 @@ public class LinkedListCycle {
   // => 문제의 제약에 보면 Node.val이 10^5 이하라고 표현했다.
   // => 그러므로 이를 이용하여 푼다. 
   public boolean hasCycle2(ListNode head) {
+
     while (head != null) {
       if (head.val == 9999999) {
         return true;
@@ -48,5 +54,4 @@ public class LinkedListCycle {
   }
   
 }
-
-// ==> Cycle이 존재하면 같은 객체를 가리킨다. 
+  // Hint ==> Cycle이 존재하면 같은 객체를 가리킨다. 
