@@ -1,9 +1,9 @@
-package java_algorithm.java_ds.javaStack;
+package java_ds.javaStack;
 
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
-import java_algorithm.java_ds.interfaceImpl.StackInterface;
+import java_ds.interfaceImpl.StackInterface;
 
 public class BasicStack<E> implements StackInterface<E> {
 

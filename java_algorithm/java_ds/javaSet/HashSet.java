@@ -1,8 +1,8 @@
-package java_algorithm.java_ds.javaSet;
+package java_ds.javaSet;
 
 import java.util.Arrays;
 
-import java_algorithm.java_ds.interfaceImpl.SetInterface;
+import java_ds.interfaceImpl.SetInterface;
 
 public class HashSet<E> implements SetInterface<E> {
 

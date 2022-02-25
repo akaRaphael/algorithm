@@ -1,6 +1,7 @@
-package java_algorithm.java_ds.interfaceImpl;
+package java_ds.interfaceImpl;
 
 import java.util.NoSuchElementException;
+import java_ds.interfaceImpl.List;
 
 public class DLinkedList<E> implements List<E> { // 이중연결리스트 구현
 

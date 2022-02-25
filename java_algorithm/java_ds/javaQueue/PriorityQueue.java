@@ -1,9 +1,9 @@
-package java_algorithm.java_ds.javaQueue;
+package java_ds.javaQueue;
 
+import java_ds.interfaceImpl.Queue;
 import java.util.Comparator;
 import java.util.NoSuchElementException;
 
-import java_algorithm.java_ds.interfaceImpl.Queue;
 
 public class PriorityQueue<E> implements Queue<E>{
 

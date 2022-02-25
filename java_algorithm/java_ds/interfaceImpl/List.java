@@ -1,4 +1,4 @@
-package java_algorithm.java_ds.interfaceImpl;
+package java_ds.interfaceImpl;
 
 public interface List<E> { // List 인터페이스를 직접 구현해보자. 
 

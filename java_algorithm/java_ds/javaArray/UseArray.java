@@ -1,4 +1,4 @@
-package java_algorithm.java_ds.javaArray;
+package java_ds.javaArray;
 
 public class UseArray {
   public static void main(String[] args) {

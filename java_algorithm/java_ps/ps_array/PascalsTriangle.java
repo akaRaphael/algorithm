@@ -1,4 +1,4 @@
-package java_algorithm.java_ps.ps_array;
+package java_ps.ps_array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

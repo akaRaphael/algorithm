@@ -1,8 +1,8 @@
-package java_algorithm.java_ds.javaQueue;
+package java_ds.javaQueue;
 
+import java_ds.interfaceImpl.Queue;
 import java.util.NoSuchElementException;
 
-import java_algorithm.java_ds.interfaceImpl.Queue;
 
 public class ArrayQueue<E> implements Queue<E>{
 

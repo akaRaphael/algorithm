@@ -1,4 +1,4 @@
-package java_algorithm.java_ps.ps_array;
+package java_ps.ps_array;
 
 public class BestTimetoBuyandSellStock { //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 

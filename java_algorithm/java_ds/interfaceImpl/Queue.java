@@ -1,4 +1,4 @@
-package java_algorithm.java_ds.interfaceImpl;
+package java_ds.interfaceImpl;
 
 public interface Queue<E> {
 

@@ -1,8 +1,8 @@
-package java_algorithm.java_ds.javaArrayList;
+package java_ds.javaArrayList;
 
+import java_ds.interfaceImpl.List;
 import java.util.Arrays;
 
-import java_algorithm.java_ds.interfaceImpl.List;
 
 public class ArrayListImpl<E> implements List<E>{
   

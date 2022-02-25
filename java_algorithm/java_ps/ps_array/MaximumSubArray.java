@@ -1,4 +1,4 @@
-package java_algorithm.java_ps.ps_array;
+package java_ps.ps_array;
 
 // 2022년 2월 7일 
 public class MaximumSubArray { //https://leetcode.com/problems/maximum-subarray/

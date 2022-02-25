@@ -1,4 +1,4 @@
-package java_algorithm.java_ds.javaStack;
+package java_ds.javaStack;
 
 public class ArrayStackImpl {
 

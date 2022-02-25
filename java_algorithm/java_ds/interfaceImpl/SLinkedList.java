@@ -1,5 +1,6 @@
-package java_algorithm.java_ds.interfaceImpl;
+package java_ds.interfaceImpl;
 
+import java_ds.interfaceImpl.List;
 import java.util.NoSuchElementException;
 
 public class SLinkedList<E> implements List<E> {

@@ -1,4 +1,4 @@
-package java_algorithm.java_ds.javaQueue;
+package java_ds.javaQueue;
 
 import java.util.Arrays;
 import java.util.Comparator;

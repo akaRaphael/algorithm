@@ -1,4 +1,5 @@
-package java_algorithm.java_ps.ps_string;
+package java_ps.ps_string;
+
 
 public class RansomNote {
   public static void main(String[] args) {
