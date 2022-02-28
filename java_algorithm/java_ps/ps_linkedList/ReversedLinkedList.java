@@ -1,10 +1,5 @@
 package java_ps.ps_linkedList;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 public class ReversedLinkedList {
 
     //Definition for singly-linked list.
