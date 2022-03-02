@@ -18,7 +18,7 @@ public class BestTimetoBuyandSellStock { //https://leetcode.com/problems/best-ti
       if(temp < 0) {
         current = prices[i];
       } else {
-        maxProfit = (maxProfit > temp) ? maxProfit : temp;
+        maxProfit = Math.max(maxProfit, temp);
       }
     }
 
