@@ -2,17 +2,17 @@ package java_ps.ps_linkedList;
 
 import java.util.HashMap;
 
-//Definition for singly-linked list.
- class ListNode {
-     int val;
-     ListNode next;
-     ListNode(int x) {
-         val = x;
-         next = null;
-       }
- }
-
 public class LinkedListCycle {
+
+  //Definition for singly-linked list.
+  static class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) {
+      val = x;
+      next = null;
+    }
+  }
   
   public static void main(String[] args) {
 
