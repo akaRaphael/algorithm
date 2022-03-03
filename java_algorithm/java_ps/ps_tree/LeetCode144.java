@@ -5,6 +5,8 @@ import java.util.List;
 
 public class LeetCode144 {
 
+    // Pre-order Traverse(전위순회) = 부모노드 -> 왼쪽 자식 -> 오른쪽 자식
+
     // Definition for a binary tree node.
     static class TreeNode {
         int val;
