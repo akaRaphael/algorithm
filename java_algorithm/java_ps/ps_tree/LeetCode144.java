@@ -3,7 +3,7 @@ package java_ps.ps_tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeeCode144 {
+public class LeetCode144 {
 
     // Definition for a binary tree node.
     static class TreeNode {
@@ -22,9 +22,7 @@ public class LeeCode144 {
     public List<Integer> preorderTraversal(TreeNode root) {
 
         List<Integer> result = new ArrayList<>();
-
         preOrder(root, result);
-
         return result;
     }
 
@@ -33,7 +31,6 @@ public class LeeCode144 {
         if(root == null) {
             return;
         }
-
         result.add(root.val);
 
         preOrder(root.left, result);
