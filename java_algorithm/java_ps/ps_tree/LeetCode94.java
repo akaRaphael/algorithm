@@ -20,7 +20,7 @@ public class LeetCode94 {
     }
 
     public List<Integer> inorderTraversal(TreeNode root) {
-        // inorder Traversal = 중위순회 = 왼쪽 자식 -> 부모 -> 오른쪽 자식 순으로 순회
+        // inorder Traversal(중위순회) = 왼쪽 자식 -> 부모 -> 오른쪽 자식 순으로 순회
         // 반복문을 이용한 풀이
 
         Stack<TreeNode> stack = new Stack<>();
