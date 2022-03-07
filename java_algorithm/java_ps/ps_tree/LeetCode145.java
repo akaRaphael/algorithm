@@ -8,20 +8,6 @@ public class LeetCode145 {
     // Post Traverse(후위순회) = 왼쪽 자식 -> 오른쪽 자식 -> 부모
     // 재귀를 사용하면 이대로 코딩하면 된다.
 
-    // Definition for a binary tree node.
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     public List<Integer> postorderTraversal(TreeNode root) {
         // 재귀를 이용한 풀이
 
