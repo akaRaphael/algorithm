@@ -1,4 +1,4 @@
-package java_ps.crack_algo.TwoPointers;
+package java_ps.crack_algo.twoPointers;
 
 public class LeetCode344 {
 

@@ -1,4 +1,4 @@
-package java_ps.crack_algo.BST;
+package java_ps.crack_algo.bst;
 
 public class LeetCode278 {
 
