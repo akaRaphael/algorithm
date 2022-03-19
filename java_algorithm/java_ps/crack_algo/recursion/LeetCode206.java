@@ -3,16 +3,18 @@ package java_ps.crack_algo.recursion;
 public class LeetCode206 {
 
     public ListNode reverseList(ListNode head) {
+        return reverse(head, null);
+    }
 
-        if(head == null || head.next == null) {
-            return head;
-        }
+    public ListNode reverse(ListNode head, ListNode newHead) {
 
-        ListNode newHead = reverseList(head.next);
+        if(head == null) return newHead;
 
-        head.next.next = head;
-        head.next = null;
+        ListNode next = head.next;
+        head.next = newHead;
+        newHead = head;
+        head = next;
 
-        return newHead;
+        return reverse(head, newHead);
     }
 }
