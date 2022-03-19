@@ -6,6 +6,10 @@ import java.util.List;
 
 public class LeetCode77 {
 
+    // 시간복잡도
+    // 1일 때 2~4까지 => [1,2], [1,3], [1,4]
+    // 2일 때 3~4까지 => [2,3], [2,4]
+    // 3일 때 4까지 => [3,4]
     public List<List<Integer>> combine(int n, int k) {
 
         List<List<Integer>> result = new LinkedList<>();
