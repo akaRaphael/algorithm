@@ -6,7 +6,6 @@ public class LeetCode121 {
 
         int result = 0;
         int current = prices[0];
-
         for(int i = 1; i < prices.length; i++) {
             if(prices[i] - current < 0) {
                 current = prices[i];
