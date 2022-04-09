@@ -16,9 +16,9 @@ public class CamouflageCombination {
         Iterator<Integer> iter = map.values().iterator();
 
         while(iter.hasNext()) {
-            answer *= iter.next().intValue() + 1;
+            answer *= iter.next().intValue() + 1; // 안입는 경우의 수를 추가해야함
         }
 
-        return answer - 1;
+        return answer - 1; // 아무것도 안입는 경우를 제외
     }
 }
