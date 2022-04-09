@@ -2,9 +2,9 @@ package java_ps.highScoreKit.java_hash;
 
 import java.util.HashMap;
 
-public class Programmers42576 {
+public class IncompletedRace {
 
-    public String inCompletedPlayer(String[] participant, String[] completion) {
+    public String incompletedPlayer(String[] participant, String[] completion) {
         String answer = "";
         HashMap<String, Integer> map = new HashMap<>();
 

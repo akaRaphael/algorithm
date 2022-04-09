@@ -2,7 +2,7 @@ package java_ps.highScoreKit.java_hash;
 
 import java.util.HashMap;
 
-public class Programmers42577 {
+public class PhoneBook {
 
     public boolean phoneBook(String[] phone_book) {
         boolean answer = true;
