@@ -1,4 +1,4 @@
-package java_ps.neetcode;
+package java_ps.neetcode.arrayNhash;
 
 public class LeetCode238 {
     public int[] productExceptSelf(int[] nums) {
